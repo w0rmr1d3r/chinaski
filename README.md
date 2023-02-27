@@ -35,8 +35,13 @@ pip install chinaski
 
 ## Usage
 
-```python
-# todo
+
+```text
+Usage: python -m chinaski [OPTIONS]
+
+Options:
+  --file TEXT  Path to single file to scan
+  --help       Show this message and exit.
 ```
 
 ## Contributing

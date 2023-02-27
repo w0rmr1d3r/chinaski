@@ -1,6 +1,6 @@
 import click
 
-from chinaski.chinaski import chinaski
+from chinaski.henry import core
 
 
 @click.command()
@@ -15,4 +15,6 @@ from chinaski.chinaski import chinaski
 def cli(
     file: str,
 ) -> None:
-    chinaski(file=file)
+    # todo - if filepath is none or empty, raise exception and test to it
+    for result in core(file_path=file):
+        print(result)

@@ -1,3 +1,0 @@
-user.name.two@email.com
-
-variable = user.name@mail.net
