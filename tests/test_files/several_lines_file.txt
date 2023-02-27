@@ -1,0 +1,7 @@
+this file has several line
+
+in it
+
+and can contain an email
+
+such as: test@test.com
