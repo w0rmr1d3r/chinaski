@@ -6,13 +6,13 @@ install-dev:
 
 format:
 	# run autoflake first, so empty spaces are fixed by other tools
-	autoflake --remove-all-unused-imports --remove-duplicate-keys --remove-unused-variables -v -r -i python-template/
+	autoflake --remove-all-unused-imports --remove-duplicate-keys --remove-unused-variables -v -r -i chinaski/
 	isort --float-to-top .
 	black .
 	docformatter --in-place --recursive .
 
 lint:
-	autoflake --remove-all-unused-imports --remove-duplicate-keys --remove-unused-variables --quiet -r -c python-template/
+	autoflake --remove-all-unused-imports --remove-duplicate-keys --remove-unused-variables --quiet -r -c chinaski/
 	isort --check-only .
 	black --check .
 	docformatter --check --recursive .
@@ -24,12 +24,12 @@ unit:
 test: lint unit
 
 coverage:
-	coverage run --source=python-template/ --branch -m pytest tests --junitxml=build/test.xml -v
+	coverage run --source=chinaski/ --branch -m pytest tests --junitxml=build/test.xml -v
 	coverage xml -i -o build/coverage.xml
 	coverage report
 
 py-lint:
-	pylint python-template/
+	pylint chinaski/
 
 py-lint-test:
 	# C0116 - missing function docstring - does not apply to tests

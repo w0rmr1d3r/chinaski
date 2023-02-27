@@ -1,17 +1,14 @@
 [build-system]
-# todo - check the latest version on this
 requires = ["setuptools>=67.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "python-template"
+name = "chinaski"
 # Make sure this matches the description in GitHub, in the README.md and wherever applies
-description = "python-template"
+description = "Detect email addresses in files"
 readme = "README.md"
 authors = [{ "name" = "w0rmr1d3r" }]
-# todo
-#license = { text = "MIT" }
-# todo
+license = { text = "GPLv3" }
 classifiers = [
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
@@ -19,7 +16,7 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
 ]
-# todo Make sure this matches the keywords in GitHub
+# Make sure this matches the keywords in GitHub
 keywords = []
 version = "0.0.1"
 # Minumum supported version
@@ -34,28 +31,27 @@ dependencies = [
 
 [project.optional-dependencies]
 # Always try to be compatible with these versions and above
-# todo - search for latest versions and update project and template accordingly
 dev = [
     "autoflake>=2.0.0",
     "black>=23.0.0",
-    "coverage>=6.3.2",
+    "coverage>=7.0.0",
     "docformatter>=1.5.1",
     "flake8>=6.0.0",
-    "isort>=5.10.0",
-    "pip-tools>=6.5.0",
-    "pylint>=2.15.10",
-    "pytest>=6.2.5",
+    "isort>=5.12.0",
+    "pip-tools>=6.12.0",
+    "pylint>=2.16.0",
+    "pytest>=7.0.0",
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/w0rmr1d3r/python-template"
-"Repository" = "https://github.com/w0rmr1d3r/python-template"
-"Bug Tracker" = "https://github.com/w0rmr1d3r/python-template/issues"
-"Documentation" = "https://github.com/w0rmr1d3r/python-template"
-"Changelog" = "https://github.com/w0rmr1d3r/python-template/releases"
+"Homepage" = "https://github.com/w0rmr1d3r/chinaski"
+"Repository" = "https://github.com/w0rmr1d3r/chinaski"
+"Bug Tracker" = "https://github.com/w0rmr1d3r/chinaski/issues"
+"Documentation" = "https://github.com/w0rmr1d3r/chinaski"
+"Changelog" = "https://github.com/w0rmr1d3r/chinaski/releases"
 
 [tool.setuptools]
-packages = ["python-template"]
+packages = ["chinaski"]
 
 [tool.black]
 line-length = 120
