@@ -8,23 +8,6 @@ A tribute to the novel [Post Office](https://en.wikipedia.org/wiki/Post_Office_(
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/chinaski)
 [![PyPi downloads](https://img.shields.io/pypi/dm/chinaski?label=PyPi%20downloads)](https://pypistats.org/packages/chinaski)
 
-# Steps
-
-- [x] Review settings of the repo
-- [x] Add branch protection
-- [x] Replace `chinaski` everywhere with the name of the new project
-- [x] Solve `todo`s around the files
-- [x] Select a License and update pyproject.toml file accordingly
-- [x] Create virtualenv, install `pip-tools`, freeze dependencies and install dependencies
-- [x] Create token in PyPi and add to GitHub secrets
-- [x] Create issue template and review community standards
-- [x] Add labels/badges that apply in the readme (version, release, downloads, python supported, ci, tools, etc.)
-- [ ] Add the project to the profile
-- [x] Add some classifiers and keywords
-- [x] Review security setup (security tab)
-- [ ] Remove this steps and do the first release (0.0.1) and update the website of the project!
-- [x] Dependency review to branch protection after first PR
-
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install chinaski.
@@ -46,6 +29,7 @@ Options:
 ```
 
 Example:
+
 ```bash
 python -m chinaski --file ./file.txt
 ```
