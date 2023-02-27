@@ -35,13 +35,28 @@ pip install chinaski
 
 ## Usage
 
+### As CLI
 
 ```text
 Usage: python -m chinaski [OPTIONS]
 
 Options:
-  --file TEXT  Path to single file to scan
+  --file TEXT  REQUIRED - Path to single file to scan.
   --help       Show this message and exit.
+```
+
+Example:
+```bash
+python -m chinaski --file ./file.txt
+```
+
+### Inside your code
+
+```python
+from chinaski.henry import core
+
+if __name__ == '__main__':
+    core("file.txt")
 ```
 
 ## Contributing
