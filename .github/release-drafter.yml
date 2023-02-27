@@ -1,6 +1,9 @@
 name-template: '$RESOLVED_VERSION'
 tag-template: '$RESOLVED_VERSION'
 categories:
+  - title: 'Security'
+    labels:
+      - 'security'
   - title: 'Bumps'
     labels:
       - 'bump'
