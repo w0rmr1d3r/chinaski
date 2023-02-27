@@ -1,8 +1,8 @@
 import ntpath
 
+import chinaski.read_lines as rl
 from chinaski.finder import find_emails_in_line
 from chinaski.is_email import Result, is_email
-from chinaski.read_lines import read_lines_from_file
 
 
 def path_leaf(path: str) -> str:
@@ -20,7 +20,11 @@ def path_leaf(path: str) -> str:
     return tail or ntpath.basename(head)
 
 
-# todo - test
+class FilePathIsNotValidException(Exception):
+    def __init__(self, message="The given file path is not valid"):
+        super().__init__(message)
+
+
 def core(file_path: str) -> list[Result]:
     """Core function of the program.
 
@@ -29,7 +33,10 @@ def core(file_path: str) -> list[Result]:
     :param file_path: path to file to detect emails in it
     :return: list of Result, containing the findings
     """
-    lines = read_lines_from_file(filename=file_path)
+    if file_path == "" or file_path is None:
+        raise FilePathIsNotValidException
+
+    lines = rl.read_lines_from_file(filename=file_path)
     results = []
     file_name = path_leaf(file_path)
 

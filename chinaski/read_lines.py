@@ -1,4 +1,3 @@
-# todo - test
 def read_lines_from_file(filename: str) -> list[str]:
     """Reads lines from a file and returns them as list of str.
 

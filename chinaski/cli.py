@@ -15,6 +15,13 @@ from chinaski.henry import core
 def cli(
     file: str,
 ) -> None:
-    # todo - if file or path are none or empty, raise exception and test to it
+    """Cli entry for chinaski.
+
+    Will call the core function and print the results found
+
+    :param file: REQUIRED - Path to single file to scan.
+    :return: None, will only print results
+    """
+
     for result in core(file_path=file):
         print(result)
