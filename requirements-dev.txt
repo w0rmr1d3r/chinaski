@@ -14,7 +14,7 @@ black==23.1.0
     # via chinaski (pyproject.toml)
 build==0.10.0
     # via pip-tools
-charset-normalizer==2.1.1
+charset-normalizer==3.0.1
     # via docformatter
 click==8.1.3
     # via
