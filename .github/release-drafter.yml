@@ -6,7 +6,7 @@ categories:
       - 'security'
   - title: 'Bumps'
     labels:
-      - 'bump'
+      - 'dependencies'
 version-resolver:
   major:
     labels:
