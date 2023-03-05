@@ -54,7 +54,7 @@ pathspec==0.11.0
     # via black
 pip-tools==6.12.3
     # via chinaski (pyproject.toml)
-platformdirs==3.0.0
+platformdirs==3.1.0
     # via
     #   black
     #   pylint
@@ -70,7 +70,7 @@ pylint==2.16.3
     # via chinaski (pyproject.toml)
 pyproject-hooks==1.0.0
     # via build
-pytest==7.2.1
+pytest==7.2.2
     # via chinaski (pyproject.toml)
 tomli==2.0.1
     # via
