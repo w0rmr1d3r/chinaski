@@ -4,6 +4,9 @@ categories:
   - title: 'Security'
     labels:
       - 'security'
+  - title: 'Documentation'
+    labels:
+      - 'documentation'
   - title: 'Bumps'
     labels:
       - 'dependencies'
