@@ -4,9 +4,12 @@ categories:
   - title: 'Security'
     labels:
       - 'security'
+  - title: 'Documentation'
+    labels:
+      - 'documentation'
   - title: 'Bumps'
     labels:
-      - 'bump'
+      - 'dependencies'
 version-resolver:
   major:
     labels:
