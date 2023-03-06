@@ -1,4 +1,7 @@
 import ntpath
+import os
+import pathlib
+from typing import Union
 
 import chinaski.read_lines as rl
 from chinaski.finder import find_emails_in_line
@@ -20,33 +23,58 @@ def path_leaf(path: str) -> str:
     return tail or ntpath.basename(head)
 
 
-class FilePathIsNotValidException(Exception):
-    def __init__(self, message="The given file path is not valid"):
+class PathToFileOrDirIsNotValidException(Exception):
+    def __init__(self, message="The given path to file or dir is not valid"):
         super().__init__(message)
 
 
-def core(file_path: str) -> list[Result]:
+def obtain_list_of_files(path_to_file_or_dir: Union[pathlib.Path, str]) -> list:
+    """Given the path being a file, it will return a list containing 1 item,
+    which is the path to that file. Given the path being a directory, it will
+    return a list of every file in that directory and its subdirectories.
+
+    :param path_to_file_or_dir: Path to file or directory to retrieve all the files in it
+    :return: List of paths to files to scan
+    """
+    list_of_files = []
+
+    if not os.path.isdir(path_to_file_or_dir):
+        list_of_files.append(path_to_file_or_dir)
+
+    files = pathlib.Path(path_to_file_or_dir).glob("*")
+    for file in files:
+        if os.path.isdir(file):
+            list_of_files += obtain_list_of_files(file)
+        else:
+            list_of_files.append(file)
+
+    return list_of_files
+
+
+def core(path_to_file_or_dir: str) -> list[Result]:
     """Core function of the program.
 
-    It will read the lines from a given file and return a list of Result where it has found emails.
+    It will read the lines from each file given in the path and return a list of Result where it has found emails.
 
-    :param file_path: path to file to detect emails in it
+    :param path_to_file_or_dir: path to file or directory to detect emails in it
     :return: list of Result, containing the findings
     """
-    if file_path == "" or file_path is None:
-        raise FilePathIsNotValidException
-
-    lines = rl.read_lines_from_file(filename=file_path)
     results = []
-    file_name = path_leaf(file_path)
+    if path_to_file_or_dir == "" or path_to_file_or_dir is None:
+        raise PathToFileOrDirIsNotValidException
 
-    for i in range(len(lines)):
-        line = lines[i]
-        emails_in_line = find_emails_in_line(line)
+    list_of_files = obtain_list_of_files(path_to_file_or_dir)
+    for file in list_of_files:
+        lines = rl.read_lines_from_file(filename=file)
+        file_name = path_leaf(file)
 
-        for email in emails_in_line:
-            res = is_email(line=email, line_number=i + 1, file_name=file_name)
-            if res:
-                results.append(res)
+        for i in range(len(lines)):
+            line = lines[i]
+            emails_in_line = find_emails_in_line(line)
+
+            for email in emails_in_line:
+                res = is_email(line=email, line_number=i + 1, file_name=file_name)
+                if res:
+                    results.append(res)
 
     return results
