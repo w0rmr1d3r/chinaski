@@ -7,6 +7,8 @@ import chinaski.read_lines as rl
 from chinaski.finder import find_emails_in_line
 from chinaski.is_email import Result, is_email
 
+IGNORED_FOLDERS = [".git", ".idea", ".pytest_cache", "__pycache__"]
+
 
 def path_leaf(path: str) -> str:
     """Retrieves the file name and extension from a given path.
@@ -33,10 +35,15 @@ def obtain_list_of_files(path_to_file_or_dir: Union[pathlib.Path, str]) -> list:
     which is the path to that file. Given the path being a directory, it will
     return a list of every file in that directory and its subdirectories.
 
+    There are some ignored folders/paths, since they bring no value right now.
+
     :param path_to_file_or_dir: Path to file or directory to retrieve all the files in it
     :return: List of paths to files to scan
     """
     list_of_files = []
+
+    if any(ignored_folder for ignored_folder in IGNORED_FOLDERS if ignored_folder in str(path_to_file_or_dir)):
+        return list_of_files
 
     if not os.path.isdir(path_to_file_or_dir):
         list_of_files.append(path_to_file_or_dir)

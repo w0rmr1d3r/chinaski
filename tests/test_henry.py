@@ -89,3 +89,18 @@ def test_obtain_list_of_files_directory():
 
     # sorted to pass the test, but order is not important
     TestCase().assertListEqual(sorted(result), sorted(expected))
+
+
+@pytest.mark.parametrize(
+    "path_to_ignore",
+    [
+        ".git",
+        ".git/",
+        "/.git/test",
+        "/.idea/test",
+        "/.pytest_cache/test",
+        "/__pycache__/test",
+    ],
+)
+def test_obtain_list_of_files_ignores_path(path_to_ignore):
+    assert obtain_list_of_files(path_to_ignore) == []
