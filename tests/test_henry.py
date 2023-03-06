@@ -86,4 +86,4 @@ def test_obtain_list_of_files_directory():
         PosixPath(TEST_FILES / "one_line_file.txt"),
     ]
 
-    TestCase().assertListEqual(result, expected)
+    TestCase().assertListEqual(sorted(result), sorted(expected))
