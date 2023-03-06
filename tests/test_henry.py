@@ -1,4 +1,5 @@
 from pathlib import Path, PosixPath
+from unittest import TestCase
 from unittest.mock import patch
 
 import pytest
@@ -86,4 +87,4 @@ def test_obtain_list_of_files_directory():
         PosixPath(TEST_FILES / "one_line_file.txt"),
     ]
 
-    assert result == expected
+    TestCase().assertListEqual(result, expected)
