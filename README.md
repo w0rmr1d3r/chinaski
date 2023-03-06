@@ -1,6 +1,6 @@
 # chinaski
 
-Detect emails addresses in files.
+Detect email addresses in files.
 A tribute to the novel [Post Office](https://en.wikipedia.org/wiki/Post_Office_(novel)) from Charles Bukowski.
 
 [![PyPI](https://img.shields.io/pypi/v/chinaski)](https://pypi.org/project/chinaski/)
@@ -21,17 +21,24 @@ pip install chinaski
 ### As CLI
 
 ```text
-Usage: python -m chinaski [OPTIONS]
+Usage: python -m chinaski [OPTIONS] PATH_TO_FILE_OR_DIR
+
+  Detect emails addresses in files.
+
+  PATH_TO_FILE_OR_DIR: Path to single file or directory to scan.
 
 Options:
-  --file TEXT  REQUIRED - Path to single file to scan.
-  --help       Show this message and exit.
+  --help  Show this message and exit.
 ```
 
 Example:
 
 ```bash
-python -m chinaski --file ./file.txt
+# Detect in only 1 file
+python -m chinaski ./file.txt
+
+# Detect in a directory
+python -m chinaski path/to/dir
 ```
 
 ### Inside your code

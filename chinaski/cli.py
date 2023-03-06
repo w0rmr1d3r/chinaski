@@ -4,24 +4,14 @@ from chinaski.henry import core
 
 
 @click.command()
-@click.option(
-    "--file",
-    "file",
-    type=str,
-    default=None,
-    help="REQUIRED - Path to single file to scan.",
-    show_default=True,
-)
+@click.argument("path_to_file_or_dir")
 def cli(
-    file: str,
+    path_to_file_or_dir: str,
 ) -> None:
-    """Cli entry for chinaski.
+    """Detect email addresses in files.
 
-    Will call the core function and print the results found
-
-    :param file: REQUIRED - Path to single file to scan.
-    :return: None, will only print results
+    PATH_TO_FILE_OR_DIR: Path to single file or directory to scan.
     """
 
-    for result in core(file_path=file):
+    for result in core(path_to_file_or_dir=path_to_file_or_dir):
         print(result)
