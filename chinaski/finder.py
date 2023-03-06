@@ -1,5 +1,7 @@
 import re
 
+email_like_regex = re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+")
+
 
 def find_emails_in_line(line: str) -> list[str]:
     """Finds emails given a str and returns them as items of a list.
@@ -10,4 +12,4 @@ def find_emails_in_line(line: str) -> list[str]:
     :param line: str to find emails in
     :return: list of emails found or empty list is nothing is found
     """
-    return re.findall(r"[\w.+-]+@[\w-]+\.[\w.-]+", line)
+    return re.findall(email_like_regex, line)
