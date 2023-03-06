@@ -49,13 +49,12 @@ def test_core(mock_read_lines_from_file):
 def test_core_directory():
     result = core(str(TEST_FILES))
 
-    expected = [
-        Result(is_email=True, email="test@test.com", line_number=7, file_name="several_lines_file_two.txt"),
-        Result(is_email=True, email="super@email.net", line_number=9, file_name="several_lines_file_two.txt"),
-        Result(is_email=True, email="test@test.com", line_number=7, file_name="several_lines_file.txt"),
-    ]
-
-    assert result == expected
+    assert len(result) == 3
+    assert Result(is_email=True, email="test@test.com", line_number=7, file_name="several_lines_file_two.txt") in result
+    assert (
+        Result(is_email=True, email="super@email.net", line_number=9, file_name="several_lines_file_two.txt") in result
+    )
+    assert Result(is_email=True, email="test@test.com", line_number=7, file_name="several_lines_file.txt") in result
 
 
 @pytest.mark.parametrize(
