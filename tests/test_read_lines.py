@@ -30,3 +30,7 @@ TEST_FILES = Path(__file__).parent / "test_files"
 )
 def test_read_lines(file, expected):
     assert read_lines_from_file(filename=file) == expected
+
+
+def test_read_lines_returns_empty_list_when_file_does_not_exist():
+    assert read_lines_from_file(filename="file does not exist") == []
