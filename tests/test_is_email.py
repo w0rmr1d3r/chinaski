@@ -9,25 +9,42 @@ def test_result_as_str():
 
 
 @pytest.mark.parametrize(
-    "line, line_number, file_name, expected",
+    "line, expected",
     [
         (
             "test@test.com",
-            1,
-            "test.txt",
             Result(is_email=True, email="test@test.com", line_number=1, file_name="test.txt"),
         ),
-        ("test@test", 1, "test.txt", None),
-        ("@test", 1, "test.txt", None),
-        ("bad@test.s", 1, "test.txt", Result(is_email=True, email="bad@test.s", line_number=1, file_name="test.txt")),
-        ("bad@test.ss", 1, "test.txt", Result(is_email=True, email="bad@test.ss", line_number=1, file_name="test.txt")),
+        ("test@test", None),
+        ("@test", None),
+        ("bad@test.s", None),
+        ("bad@test.ss", Result(is_email=True, email="bad@test.ss", line_number=1, file_name="test.txt")),
+        ("bad@test.sss", Result(is_email=True, email="bad@test.sss", line_number=1, file_name="test.txt")),
         (
             "secure.secure00000@test.ss",
-            1,
-            "test.txt",
             Result(is_email=True, email="secure.secure00000@test.ss", line_number=1, file_name="test.txt"),
+        ),
+        (
+            "test@test.es",
+            Result(is_email=True, email="test@test.es", line_number=1, file_name="test.txt"),
+        ),
+        (
+            "test@test.fr",
+            Result(is_email=True, email="test@test.fr", line_number=1, file_name="test.txt"),
+        ),
+        (
+            "test@test.gov.uk",
+            Result(is_email=True, email="test@test.gov.uk", line_number=1, file_name="test.txt"),
+        ),
+        (
+            "test@test.gov.co.uk",
+            Result(is_email=True, email="test@test.gov.co.uk", line_number=1, file_name="test.txt"),
+        ),
+        (
+            "test@anything.something.test",
+            Result(is_email=True, email="test@anything.something.test", line_number=1, file_name="test.txt"),
         ),
     ],
 )
-def test_is_email(line, line_number, file_name, expected):
-    assert is_email(line, line_number, file_name) == expected
+def test_is_email(line, expected):
+    assert is_email(line, 1, "test.txt") == expected
