@@ -49,6 +49,7 @@ def test_core(mock_read_lines_from_file):
 def test_core_directory():
     result = core(str(TEST_FILES))
 
+    # asserting this way to pass the test, since sorting isn't available for Result
     assert len(result) == 3
     assert Result(is_email=True, email="test@test.com", line_number=7, file_name="several_lines_file_two.txt") in result
     assert (
@@ -86,4 +87,5 @@ def test_obtain_list_of_files_directory():
         PosixPath(TEST_FILES / "one_line_file.txt"),
     ]
 
+    # sorted to pass the test, but order is not important
     TestCase().assertListEqual(sorted(result), sorted(expected))
