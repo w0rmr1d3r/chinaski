@@ -10,3 +10,6 @@ def read_lines_from_file(filename: str) -> list[str]:
     except FileNotFoundError:
         print("File not found, returning empty list")
         return []
+    except UnicodeDecodeError:
+        print(f"UnicodeDecodeError when reading: <{filename}> proceeding with empty list")
+        return []
