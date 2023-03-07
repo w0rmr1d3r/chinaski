@@ -5,7 +5,13 @@ from unittest.mock import patch
 import pytest
 from _pytest.python_api import raises
 
-from chinaski.henry import PathToFileOrDirIsNotValidException, core, obtain_list_of_files, path_leaf
+from chinaski.henry import (
+    PathToFileOrDirIsNotValidException,
+    assert_given_path_is_valid,
+    core,
+    obtain_list_of_files,
+    path_leaf,
+)
 from chinaski.is_email import Result
 
 TEST_FILES = Path(__file__).parent / "test_files"
@@ -68,6 +74,18 @@ def test_core_directory():
 def test_core_raises_exception_if_file_path_is_not_valid(invalid_file_path):
     with raises(PathToFileOrDirIsNotValidException):
         _ = core(invalid_file_path)
+
+
+@pytest.mark.parametrize(
+    "invalid_file_path",
+    [
+        "",
+        None,
+    ],
+)
+def test_assert_given_path_is_valid_raises_exception_if_file_path_is_not_valid(invalid_file_path):
+    with raises(PathToFileOrDirIsNotValidException):
+        assert_given_path_is_valid(invalid_file_path)
 
 
 def test_obtain_list_of_files_single_file():
