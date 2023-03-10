@@ -58,6 +58,17 @@ def obtain_list_of_files(path_to_file_or_dir: Union[pathlib.Path, str]) -> list:
     return list_of_files
 
 
+def assert_given_path_is_valid(path_to_file_or_dir: str) -> None:
+    """Asserts the given path_to_file_or_dir is valid. That is, not an empty
+    str and not None.
+
+    :param path_to_file_or_dir: entry to check
+    :return: None or raises PathToFileOrDirIsNotValidException if it's not valid.
+    """
+    if path_to_file_or_dir == "" or path_to_file_or_dir is None:
+        raise PathToFileOrDirIsNotValidException
+
+
 def core(path_to_file_or_dir: str) -> list[Result]:
     """Core function of the program.
 
@@ -66,10 +77,9 @@ def core(path_to_file_or_dir: str) -> list[Result]:
     :param path_to_file_or_dir: path to file or directory to detect emails in it
     :return: list of Result, containing the findings
     """
-    results = []
-    if path_to_file_or_dir == "" or path_to_file_or_dir is None:
-        raise PathToFileOrDirIsNotValidException
+    assert_given_path_is_valid(path_to_file_or_dir)
 
+    results = []
     list_of_files = obtain_list_of_files(path_to_file_or_dir)
     for file in list_of_files:
         lines = rl.read_lines_from_file(filename=file)
