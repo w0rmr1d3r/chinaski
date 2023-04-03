@@ -80,7 +80,7 @@ tomli==2.0.1
     #   docformatter
     #   pylint
     #   pytest
-tomlkit==0.11.6
+tomlkit==0.11.7
     # via pylint
 typing-extensions==4.5.0
     # via
