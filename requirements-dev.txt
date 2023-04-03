@@ -21,7 +21,7 @@ click==8.1.3
     #   black
     #   chinaski (pyproject.toml)
     #   pip-tools
-coverage==7.2.1
+coverage==7.2.2
     # via chinaski (pyproject.toml)
 dill==0.3.6
     # via pylint
