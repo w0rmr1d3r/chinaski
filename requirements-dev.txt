@@ -25,7 +25,7 @@ coverage==7.2.5
     # via chinaski (pyproject.toml)
 dill==0.3.6
     # via pylint
-docformatter==1.5.1
+docformatter==1.6.4
     # via chinaski (pyproject.toml)
 exceptiongroup==1.1.1
     # via pytest
