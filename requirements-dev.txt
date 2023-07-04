@@ -56,7 +56,7 @@ platformdirs==3.5.1
     # via
     #   black
     #   pylint
-pluggy==1.0.0
+pluggy==1.2.0
     # via pytest
 pycodestyle==2.10.0
     # via flake8
