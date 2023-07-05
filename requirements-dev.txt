@@ -6,7 +6,7 @@
 #
 astroid==2.15.5
     # via pylint
-autoflake==2.1.1
+autoflake==2.2.0
     # via chinaski (pyproject.toml)
 black==23.3.0
     # via chinaski (pyproject.toml)
