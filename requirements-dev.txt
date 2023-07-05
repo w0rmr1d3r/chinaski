@@ -68,7 +68,7 @@ pylint==2.16.4
     # via chinaski (pyproject.toml)
 pyproject-hooks==1.0.0
     # via build
-pytest==7.3.1
+pytest==7.4.0
     # via chinaski (pyproject.toml)
 tomli==2.0.1
     # via
