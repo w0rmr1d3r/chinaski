@@ -60,7 +60,7 @@ pluggy==1.2.0
     # via pytest
 pycodestyle==2.10.0
     # via flake8
-pyflakes==3.0.1
+pyflakes==3.1.0
     # via
     #   autoflake
     #   flake8
