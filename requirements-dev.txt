@@ -6,7 +6,7 @@
 #
 astroid==2.15.6
     # via pylint
-autoflake==2.2.0
+autoflake==2.2.1
     # via chinaski (pyproject.toml)
 black==23.7.0
     # via chinaski (pyproject.toml)
@@ -19,7 +19,7 @@ click==8.1.6
     #   black
     #   chinaski (pyproject.toml)
     #   pip-tools
-coverage==7.2.7
+coverage==7.3.2
     # via chinaski (pyproject.toml)
 dill==0.3.7
     # via pylint
