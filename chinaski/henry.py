@@ -35,9 +35,11 @@ def obtain_list_of_files(path_to_file_or_dir: Union[pathlib.Path, str]) -> list:
     which is the path to that file. Given the path being a directory, it will
     return a list of every file in that directory and its subdirectories.
 
-    There are some ignored folders/paths, since they bring no value right now.
+    There are some ignored folders/paths, since they bring no value
+    right now.
 
-    :param path_to_file_or_dir: Path to file or directory to retrieve all the files in it
+    :param path_to_file_or_dir: Path to file or directory to retrieve
+        all the files in it
     :return: List of paths to files to scan
     """
     list_of_files = []
@@ -63,7 +65,8 @@ def assert_given_path_is_valid(path_to_file_or_dir: str) -> None:
     str and not None.
 
     :param path_to_file_or_dir: entry to check
-    :return: None or raises PathToFileOrDirIsNotValidException if it's not valid.
+    :return: None or raises PathToFileOrDirIsNotValidException if it's
+        not valid.
     """
     if path_to_file_or_dir == "" or path_to_file_or_dir is None:
         raise PathToFileOrDirIsNotValidException
@@ -72,9 +75,11 @@ def assert_given_path_is_valid(path_to_file_or_dir: str) -> None:
 def core(path_to_file_or_dir: str) -> list[Result]:
     """Core function of the program.
 
-    It will read the lines from each file given in the path and return a list of Result where it has found emails.
+    It will read the lines from each file given in the path and return a
+    list of Result where it has found emails.
 
-    :param path_to_file_or_dir: path to file or directory to detect emails in it
+    :param path_to_file_or_dir: path to file or directory to detect
+        emails in it
     :return: list of Result, containing the findings
     """
     assert_given_path_is_valid(path_to_file_or_dir)
