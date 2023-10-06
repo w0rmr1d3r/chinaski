@@ -19,7 +19,7 @@ classifiers = [
 ]
 # Make sure this matches the keywords in GitHub
 keywords = []
-version = "1.0.1"
+version = "1.0.2"
 # Minumum supported version
 # If supporting newer versions, update ->  CI and classifiers
 # If minimum supported version changes, update -> CI, coverage, lint, release and classifiers.
