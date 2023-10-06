@@ -4,5 +4,5 @@
 #
 #    make freeze
 #
-click==8.1.6
+click==8.1.7
     # via chinaski (pyproject.toml)
