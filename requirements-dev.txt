@@ -4,11 +4,11 @@
 #
 #    make freeze-dev
 #
-astroid==3.0.0
+astroid==3.0.1
     # via pylint
 autoflake==2.2.1
     # via chinaski (pyproject.toml)
-black==23.9.1
+black==23.11.0
     # via chinaski (pyproject.toml)
 build==1.0.3
     # via pip-tools
@@ -52,7 +52,7 @@ pathspec==0.11.2
     # via black
 pip-tools==7.3.0
     # via chinaski (pyproject.toml)
-platformdirs==3.11.0
+platformdirs==4.0.0
     # via
     #   black
     #   pylint
@@ -68,7 +68,7 @@ pylint==3.0.2
     # via chinaski (pyproject.toml)
 pyproject-hooks==1.0.0
     # via build
-pytest==7.4.2
+pytest==7.4.3
     # via chinaski (pyproject.toml)
 tomli==2.0.1
     # via
@@ -88,7 +88,7 @@ typing-extensions==4.8.0
     #   pylint
 untokenize==0.1.1
     # via docformatter
-wheel==0.41.2
+wheel==0.42.0
     # via pip-tools
 zipp==3.17.0
     # via importlib-metadata
