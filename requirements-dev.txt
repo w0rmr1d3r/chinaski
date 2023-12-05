@@ -64,7 +64,7 @@ pyflakes==3.1.0
     # via
     #   autoflake
     #   flake8
-pylint==3.0.1
+pylint==3.0.2
     # via chinaski (pyproject.toml)
 pyproject-hooks==1.0.0
     # via build
