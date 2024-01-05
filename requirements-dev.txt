@@ -33,7 +33,7 @@ importlib-metadata==7.0.1
     # via build
 iniconfig==2.0.0
     # via pytest
-isort==5.12.0
+isort==5.13.2
     # via
     #   chinaski (pyproject.toml)
     #   pylint
