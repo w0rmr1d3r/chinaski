@@ -29,7 +29,7 @@ exceptiongroup==1.2.0
     # via pytest
 flake8==6.1.0
     # via chinaski (pyproject.toml)
-importlib-metadata==6.8.0
+importlib-metadata==7.0.1
     # via build
 iniconfig==2.0.0
     # via pytest
