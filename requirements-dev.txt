@@ -27,7 +27,7 @@ docformatter==1.7.5
     # via chinaski (pyproject.toml)
 exceptiongroup==1.2.0
     # via pytest
-flake8==6.1.0
+flake8==7.0.0
     # via chinaski (pyproject.toml)
 importlib-metadata==7.0.1
     # via build
