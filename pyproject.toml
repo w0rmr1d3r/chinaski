@@ -34,7 +34,7 @@ dependencies = [
 # Always try to be compatible with these versions and above
 dev = [
     "autoflake>=2.0.0",
-    "black>=23.0.0",
+    "black>=24.3.0",
     "coverage>=7.0.0",
     "docformatter>=1.5.1",
     "flake8>=6.0.0",
