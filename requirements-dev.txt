@@ -21,7 +21,7 @@ click==8.1.7
     #   pip-tools
 coverage==7.5.3
     # via chinaski (pyproject.toml)
-dill==0.3.7
+dill==0.3.8
     # via pylint
 docformatter==1.7.5
     # via chinaski (pyproject.toml)
@@ -33,7 +33,7 @@ importlib-metadata==7.0.1
     # via build
 iniconfig==2.0.0
     # via pytest
-isort==5.12.0
+isort==5.13.2
     # via
     #   chinaski (pyproject.toml)
     #   pylint
@@ -48,7 +48,7 @@ packaging==23.2
     #   black
     #   build
     #   pytest
-pathspec==0.11.2
+pathspec==0.12.1
     # via black
 pip-tools==7.3.0
     # via chinaski (pyproject.toml)
