@@ -8,7 +8,7 @@ astroid==3.0.1
     # via pylint
 autoflake==2.2.1
     # via chinaski (pyproject.toml)
-black==23.11.0
+black==24.3.0
     # via chinaski (pyproject.toml)
 build==1.0.3
     # via pip-tools
@@ -21,7 +21,7 @@ click==8.1.7
     #   pip-tools
 coverage==7.3.2
     # via chinaski (pyproject.toml)
-dill==0.3.7
+dill==0.3.8
     # via pylint
 docformatter==1.7.5
     # via chinaski (pyproject.toml)
